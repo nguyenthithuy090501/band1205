@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <style>
+        body{
+            background: linear-gradient(to right, #448855, #508ea3, #1e5b75);
+            font-family: 'Poppins', sans-serif;
+        }
+        form {
+            width: 500px;
+            margin: 100px auto 0 auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            padding-bottom: 50px;
+            background-color: #fff;
+            color: #273d47;
+        }
+        table {
+             margin: 0 auto;
+        }
+        input {
+            padding: 5px;
+            margin: 5px;
+        }
+
+            input[type=submit] {
+                width: 100px;
+                height: 35px;
+                padding: 10px;
+                margin-top: 10px;
+                color: white;
+                background-color: rgb(41, 57, 194);
+                border: none;
+                border-radius: 17px; 
+            }
+
+            input[type=reset] {
+                width: 100px;
+                height: 35px;
+                padding: 10px;
+                margin-top: 10px;
+                color: white;
+                background-color: rgb(41, 57, 194);
+                border: none;
+                border-radius: 17px; 
+            }
+
+            input[type=text] {
+                width: 200px;
+            }
+    </style>
+</head>
+<body>
+    <div class="container-form">
+        <form action="#" method="post" onsubmit="return ktra();">
+            <center><h1 class="form-heading">ĐĂNG KÍ TOUR</h1></center>
+            <table>
+                <tr>
+                    <th>Họ và tên</th>
+                    <td>
+                        <span style="color: red;" id="loi_hoten"></span>
+                        <input type="text" name="hoten" id="hoten" placeholder="VD: Đặng Thị Thanh Nhung">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Địa chỉ</th>
+                    <td>
+                        <span style="color: red;" id="loi_diachi"></span>
+                        <input type="text" name="diachi" id="diachi" placeholder="VD: 96 Định Công, Thanh Xuân, Hà Nội">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Điện thoại</th>
+                    <td>
+                        <span style="color: red;" id="loi_sdt"></span>
+                        <input type="text" name="sdt" id="sdt" placeholder="VD: 0123456789">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Khác Việt Nam</th>
+                    <td>
+                        <input type="checkbox" name="khachVN" id="khachVN">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Chọn tour</th>
+                    <td>
+                        <select name="tour" id="tour">
+                            <option value="Buôn mê thuột-Gia lai- Kontum">Buôn mê thuột-Gia lai- Kontum</option>
+                            <option value="Đà Nẵng">Đà Nẵng</option>
+                            <option value="Cà Mau">Cà Mau</option>
+                            <option value="Cần Thơ">Cần Thơ</option>
+                            <option value="Gia Lai">Gia Lai</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Phương tiện</th>
+                    <td>
+                        <span style="color: red;" id="loi_phuongtien"></span>
+                        <input type="radio" name="xe" id="maybay">Máy bay
+                        <input type="radio" name="xe" id="oto">Ô tô
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <fieldset>
+                            <legend>Số lượng đoàn khách</legend>
+                            
+                            <span>Người lớn</span><input style="width: 125px;" type="text" name="nguoiLon" size="10" id="nguoiLon">
+                            
+                            <span>Trẻ em</span><input style="width: 125px;"type="text" name="treEm" id="treEm">
+                            <br>
+                            <span style="color: red;" id="loi_soluong"></span>
+                        </fieldset>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Ghi chú thêm</th>
+                    <td>
+                        <input type="text" name="ghichu" id="ghichu">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center">
+                        <input type="submit" value="Đồng ý">
+                        <input type="reset" value="Reset">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <span style="color: red;" id="thongbao"></span>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        function ktra() {
+            //ktra hoten
+            hoten = document.getElementById("hoten").value;
+            loi_hoten = document.getElementById("loi_hoten");
+            so = /[0-9]/g;
+            checkloi = true;
+            if(hoten == ""){
+                loi_hoten.innerHTML = "Bạn không được để trống họ tên!";
+                checkloi = false;
+            }
+            else{
+                if(!hoten.match(so)){
+                    loi_hoten.innerHTML = "";
+                }
+                else{
+                    loi_hoten.innerHTML = "Họ tên không được có số";
+                    checkloi = false;
+                }
+            }
+            // ktra địa chỉ
+            diachi = document.getElementById("diachi").value;
+            loi_diachi = document.getElementById("loi_diachi");
+            ten = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g;
+            if(diachi == ""){
+                loi_diachi.innerHTML = "Bạn không được để trống địa chỉ!";
+                checkloi = false;
+            }
+            else{
+                if(!diachi.match(ten)){
+                    loi_diachi.innerHTML = "";
+                    checkloi = false;
+                }
+                else{
+                    loi_diachi.innerHTML = "Địa chỉ không chứa ký tự đặc biệt!";
+                }
+            }
+            //ktra sđt
+            sdt = document.getElementById("sdt").value;
+            loi_sdt = document.getElementById("loi_sdt");
+            if(sdt == ""){
+                loi_sdt.innerHTML = "Không để trống số điện thoại!";
+                checkloi = false;
+            }
+            else{
+                if(sdt.length == 10){
+                    if(sdt.charAt(0) == 0){
+                        if(!isNaN(sdt)){
+                            loi_sdt.innerHTML = "";
+                        }
+                        else{
+                            loi_sdt.innerHTML ="Số điện thoại phải là số!";
+                        }
+                    }
+                    else{
+                        loi_sdt.innerHTML = "SĐT phải có số 0 ở đầu!";
+                    }
+                }
+                else{
+                    loi_sdt.innerHTML = "SĐT chưa đủ 10 chữ số!";
+                }
+            }
+            //ktra số lượng đoàn khách
+            nguoiLon = document.getElementById("nguoiLon").value;
+            treEm = document.getElementById("treEm").value;
+            loi_soluong = document.getElementById("loi_soluong");
+            if(nguoiLon == ""){
+                loi_soluong.innerHTML = "Bạn chưa nhập số lượng đoàn khách";
+                checkloi = false
+            }
+             if(treEm == ""){
+                loi_soluong.innerHTML = "Bạn chưa nhập số lượng đoàn khách";
+                checkloi = false
+            }
+            else{
+                if(isNaN(nguoiLon) || isNaN(treEm)){
+                            loi_soluong.innerHTML = "Phải là số";
+                            checkloi = false;
+                        }
+                        else{
+                            loi_soluong.innerHTML = "";
+                        }
+            }
+
+            return checkloi;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+
+}
+.header{
+
+}
+.top-menu{
+    height: 46px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #DC1588;
+    color: #fff;
+    line-height: 46px;
+    font-size: 15px;
+}
+.left-top-menu{
+    display: inline-block;
+}
+.left-top-menu-hotline{
+
+}
+.hotline-number{
+    font-size: 18px;
+    color: #ffff63;
+    font-weight: 600
+}
+.right-top-menu{
+    list-style-type: none;
+}
+.list-item{
+    display: inline-block;
+}
+.list-item-link{
+    text-decoration: none;
+    color: #fff;
+    padding: 0 12px;
+    display: block;
+}
+.top-menu-icon{
+
+}
+.main-menu{
+    display: flex;
+    height: 100px;
+    justify-content: space-around;
+    line-height: 100px
+}
+.left-main-menu{
+
+}
+.img-main-menu{
+    max-width: 150px;
+    height: 100%;
+}
+.right-main-menu{
+    list-style-type: none;
+}
+.main-menu-list-item{
+    display: inline-block;
+}
+.main-menu-item-link{
+    text-decoration: none;
+    color: #879AAC;
+    display: block;
+    padding: 0 5px;
+}
+.main-menu-item-link:hover{
+    color: rgba(0, 0, 0, 0.2);
+}
+.main-menu-icon{
+
+}
+.slider{
+    height: 400px;
+}
+.banner{
+    width: 100%;
+    height: 100%;
+}
