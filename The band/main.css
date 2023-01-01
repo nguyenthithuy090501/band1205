@@ -136,9 +136,9 @@ color: #fff;
     position: relative;
     /* sử dụng background-image: có thể đổ nền ảnh tính từ padding */
     margin-top: 46.5px;
-    padding-top: 50%;/*50% chiều rộng của chính nó*/
+    padding-top: 50%;/*50% chiều rộng của chính nó hay được gọi là 50% CHIỀU NGANG của chính nó*/ 
     /* url(ảnh) top center(position) cover no-repeat(background-size) */
-    background: url('/imgandfont/img/chicago.jpg') top center / cover no-repeat;
+    background: url('/The band/chicago.jpg') top center / cover no-repeat;
 }
 .text-content{
     position: absolute;
